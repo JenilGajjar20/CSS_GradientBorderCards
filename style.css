@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.container .box{
+    width: 350px;
+    height: 400px;
+    color: white;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 20px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.container .box:hover{
+    transform: translateY(-20px);
+}
+
+.container .box::before,
+.container .box::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, orange, red);
+}
+
+.container .box::after{
+    filter: blur(30px);
+}
+
+.container .box:nth-child(2)::before,
+.container .box:nth-child(2)::after{
+    background: linear-gradient(90deg, cyan, blue);
+}
+
+.container .box:nth-child(3)::before,
+.container .box:nth-child(3)::after{
+    background: linear-gradient(135deg, magenta, yellow);
+}
+
+.container .box span{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    bottom: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.container .box .content{
+    position: relative;
+    z-index: 1;
+    padding: 10px 40px;
+}
+
+.container .box .content h1{
+    font-size: 1.6rem;
+    font-family: cursive;
+    margin-bottom: 15px;
+}
+
+.container .box .content p{
+    font-size: 1.1rem;
+    font-family: cursive;
+    margin-bottom: 30px;
+}
+
+.container .box .content a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: cursive;
+    color: white;
+    background-color: transparent;
+    transition: 0.4s ease;
+    transition-property: background-color, color;
+}
+
+.container .box .content a:hover{
+    background-color: white;
+    color: black;
+}
